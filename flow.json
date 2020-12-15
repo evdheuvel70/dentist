@@ -1,1 +1,68 @@
-[]
+[
+    {
+        "id": "d2de9c81.6d13e8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d6480cac.85f98",
+        "type": "OL Connect Server",
+        "url": "http://localhost:9340",
+        "name": ""
+    },
+    {
+        "id": "35a6b684.14b75a",
+        "type": "http in",
+        "z": "d2de9c81.6d13e8",
+        "name": "",
+        "url": "dentist",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 210,
+        "y": 200,
+        "wires": [
+            [
+                "c99ad705.af06f8"
+            ]
+        ]
+    },
+    {
+        "id": "fe20258f.4761b8",
+        "type": "http response",
+        "z": "d2de9c81.6d13e8",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 570,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c99ad705.af06f8",
+        "type": "olcnr-preview-pdf",
+        "z": "d2de9c81.6d13e8",
+        "connect_server": "d6480cac.85f98",
+        "template": "dentist.OL-template",
+        "name": "",
+        "x": 400,
+        "y": 200,
+        "wires": [
+            [
+                "fe20258f.4761b8"
+            ]
+        ]
+    },
+    {
+        "id": "c81e9897.ae1608",
+        "type": "comment",
+        "z": "d2de9c81.6d13e8",
+        "name": "Dentist postcard",
+        "info": "",
+        "x": 220,
+        "y": 160,
+        "wires": []
+    }
+]
